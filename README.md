@@ -1,5 +1,5 @@
 
-# Deep Reinforcement Learning based Image Captioning with Embedding Reward
+# Deep RL based Image Captioning with Embedding Reward
 ## Introduction
 Image captioning is the process of generating syntactically and semantically correct sentence of an image. It is one of the most difficult problems in computer vision due to its complexity in understanding the visual content of the image and depicting it in a natural language sentence. Recent advances in deep learning based technologies  helped to handle the difficulties present in the image captioning process. Most of the state-of-the-art approaches follow an encoder decoder mechanism which sequentially predicts the words of a sentence  but  we use a decision making  framework in the image captioning process which uses policy and value network to collaboratively form a sentence. In this code we discuss the approach of-" Deep Reinforcement Learning based Image Captioning with Embedding Reward"
 ## Dataset
