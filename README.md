@@ -50,6 +50,11 @@ First we should run PolicyNetwork.py ,ValueNetwork.py, RewardNetwork.py before t
 ![](https://github.com/bpavankalyan/ImageCaptioningreinforce/blob/master/Screenshot%20from%202020-05-27%2018-53-52.png?raw=true
 )
 
-
+![](https://github.com/bpavankalyan/ImageCaptioningreinforce/blob/master/Screenshot%20from%202020-05-27%2018-54-03.png?raw=true
+)
+![](https://github.com/bpavankalyan/ImageCaptioningreinforce/blob/master/Screenshot%20from%202020-05-28%2013-02-37.png?raw=true
+)
+![](https://github.com/bpavankalyan/ImageCaptioningreinforce/blob/master/Screenshot%20from%202020-05-28%2013-02-57.png?raw=true
+)
 
 
