@@ -47,9 +47,9 @@ https://github.com/kelvinxu/arctic-captions/blob/master/metrics.py After downloa
 First we should run PolicyNetwork.py ,ValueNetwork.py, RewardNetwork.py before training them as they initialize networks.
 # Results
 
+![](Screenshot from 2020-05-27 18-53-52.png)
 
-
-
+<img src = " Screenshot from 2020-05-27 18-53-52.png">
 
 
 
