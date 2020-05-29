@@ -17,9 +17,9 @@ When we download and unzip from link we get following files
 - val2014_urls.txt
 - val2014_vgg16_fc7_pca.h5
 ''''
-In coco2014_vocab.json contains word mapping to index. In .h5 files there will be a numpy vector which are represented as vector
+ coco2014_vocab.json contains word mapping to index. In .h5 files there will be a numpy vector which are represents captions as a vector.
 ## COCO API
-we utilize the headerfiles from cocoAPI 
+we utilize the functions  from cocoAPI 
 - CODE FOR IMPORTING
 - !git clone https://github.com/waleedka/coco
 - !pip install -U setuptools
@@ -42,8 +42,8 @@ we utilize the headerfiles from cocoAPI
 - Value Network   VGG-16   LSTM
 - Reward Network  VGG-16   GRU
 ## for coco evaluations we import from following code.
-https://github.com/kelvinxu/arctic-captions/blob/master/metrics.py After downloading from link we paste into metrics.py for directly importing.
-## STARTING
+https://github.com/kelvinxu/arctic-captions/blob/master/metrics.py After downloading from link we paste into metrics.py for which we directly import for evaluation of captions.
+## Starting
 First we should run PolicyNetwork.py ,ValueNetwork.py, RewardNetwork.py before training them as they initialize networks.
 ## Results
 
