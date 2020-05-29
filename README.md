@@ -57,4 +57,12 @@ First we should run PolicyNetwork.py ,ValueNetwork.py, RewardNetwork.py before t
 ![](https://github.com/bpavankalyan/ImageCaptioningreinforce/blob/master/Screenshot%20from%202020-05-28%2013-02-57.png?raw=true
 )
 
-
+## Reference
+@misc{ren2017deep,
+    title={Deep Reinforcement Learning-based Image Captioning with Embedding Reward},
+    author={Zhou Ren and Xiaoyu Wang and Ning Zhang and Xutao Lv and Li-Jia Li},
+    year={2017},
+    eprint={1704.03899},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
