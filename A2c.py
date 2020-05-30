@@ -1,3 +1,11 @@
+''''
+
+After individual training of each networks we usea2c for joint training.
+
+''''
+
+
+
 class AdvantageActorCriticNetwork(nn.Module):
     def __init__(self, valueNet, policyNet):
         super(AdvantageActorCriticNetwork, self).__init__()
@@ -17,9 +25,9 @@ rewardNet = RewardNetwork(data["word_to_idx"]).to(device)
 policyNet = PolicyNetwork(data["word_to_idx"]).to(device)
 valueNet = ValueNetwork(data["word_to_idx"]).to(device)
 
-rewardNet.load_state_dict(torch.load('./models/rewardNetwork.pt', map_location={'cuda:0': 'cpu'}))
-policyNet.load_state_dict(torch.load('./models/policyNetwork.pt', map_location={'cuda:0': 'cpu'}))
-valueNet.load_state_dict(torch.load('./models/valueNetwork.pt', map_location={'cuda:0': 'cpu'}))
+rewardNet.load_state_dict(torch.load('./rewardNetwork.pt', map_location={'cuda:0': 'cpu'}))
+policyNet.load_state_dict(torch.load('./policyNetwork.pt', map_location={'cuda:0': 'cpu'}))
+valueNet.load_state_dict(torch.load('./valueNetwork.pt', map_location={'cuda:0': 'cpu'}))
 
 a2cNetwork = AdvantageActorCriticNetwork(valueNet, policyNet)
 optimizer = optim.Adam(a2cNetwork.parameters(), lr=0.0001)
