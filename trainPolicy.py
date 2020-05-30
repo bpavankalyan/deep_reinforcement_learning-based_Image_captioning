@@ -33,7 +33,7 @@ for epoch in range(100000):
         print("yes") 
     if loss.item() < bestLoss:
         bestLoss = loss.item()
-        torch.save(policyNetwork.state_dict(), "./models/policyNetwork.pt")
+        torch.save(policyNetwork.state_dict(), "./policyNetwork.pt")
         print("epoch:", epoch, "loss:", loss.item())
         
     optimizer.zero_grad()
