@@ -3,22 +3,17 @@ optimizer = optim.Adam(rewardNetwork.parameters(), lr=0.001)
 
 # https://cs230-stanford.github.io/pytorch-nlp.html#writing-a-custom-loss-function
 def VisualSemanticEmbeddingLoss(visuals, semantics):
-    beta = 0.2
+    gamma = 0.2
     N, D = visuals.shape
     
-    visloss = torch.mm(visuals, semantics.t())
-    visloss = visloss - torch.diag(visloss).unsqueeze(1)
-    visloss = visloss + (beta/N)*(torch.ones((N, N)).to(device) - torch.eye(N).to(device))
-    visloss = F.relu(visloss)
-    visloss = torch.sum(visloss)/N
+    visual_loss=torch.mm(visuals.semantic.t())-torch.diag(torch.mm(visuals.semantics.t())).unsqueeze(1)+ (gamma/N)*(torch.ones((N, N)).to(device) - torch.eye(N).to(device))
+    Visual_loss=torch.sum(F.relu(visualloss))/N
     
-    semloss = torch.mm(semantics, visuals.t())
-    semloss = semloss - torch.diag(semloss).unsqueeze(1)
-    semloss = semloss + (beta/N)*(torch.ones((N, N)).to(device) - torch.eye(N).to(device))
-    semloss = F.relu(semloss)
-    semloss = torch.sum(semloss)/N
+    Semantic_loss=torch.mm(semantics,visuals.t())-torch.diag(torch.mm(semantics,visuals.t())).unsqueeze(1)+ (gamma/N)*(torch.ones((N, N)).to(device) - torch.eye(N).to(device))
+    semantic_loss = torch.sum(F.relu(semanticloss))/N
+   
     
-    return visloss + semloss
+    return visual_loss + semantic_loss
 
 batch_size = 50
 bestLoss = 10000
@@ -52,13 +47,13 @@ def GetRewards(features, captions, model):
     return rewards
 
 rewardNet = RewardNetwork(data["word_to_idx"]).to(device)
-rewardNet.load_state_dict(torch.load('./models/rewardNetwork.pt', map_location={'cuda:0': 'cpu'}))
+rewardNet.load_state_dict(torch.load('./rewardNetwork.pt', map_location={'cuda:0': 'cpu'}))
 for param in rewardNet.parameters():
     param.require_grad = False
 print(rewardNet)
 
 policyNet = PolicyNetwork(data["word_to_idx"]).to(device)
-policyNet.load_state_dict(torch.load('./models/policyNetwork.pt', map_location={'cuda:0': 'cpu'}))
+policyNet.load_state_dict(torch.load('./policyNetwork.pt', map_location={'cuda:0': 'cpu'}))
 for param in policyNet.parameters():
     param.require_grad = False
 print(policyNet)
