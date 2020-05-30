@@ -16,8 +16,7 @@ optimizer = optim.Adam(policyNetwork.parameters(), lr=0.0001)
 
 
 batch_size = 100
-bestLoss = 0.3
-#0.006700546946376562
+bestLoss = 0.2
 
 for epoch in range(100000):
     captions, features, _ = sample_coco_minibatch(small_data, batch_size=batch_size, split='train')
