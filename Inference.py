@@ -1,3 +1,14 @@
+
+policyNet = PolicyNetwork(data["word_to_idx"]).to(device)
+policyNet.load_state_dict(torch.load('./policyNetwork.pt', map_location={'cuda:0': 'cpu'}))
+policyNet.train(mode=False)
+
+valueNet = ValueNetwork(data["word_to_idx"]).to(device)
+valueNet.load_state_dict(torch.load('./valueNetwork.pt', map_location={'cuda:0': 'cpu'}))
+valueNet.train(mode=False)
+
+
+
 def GenerateCaptionsWithBeamSearchValueScoring(features, captions, model, beamSize=5):
     features = torch.tensor(features, device=device).float().unsqueeze(0)
     gen_caps = torch.tensor(captions[:, 0:1], device=device).long()
